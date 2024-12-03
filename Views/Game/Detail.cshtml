@@ -1,0 +1,46 @@
+﻿@model List<Question>
+
+@{
+    ViewData["Title"] = "Details";
+    var title = ViewBag.GameLevelTitle;
+    var idLevel = ViewBag.GameLevelId;
+}
+
+<div class="container">
+    <h2 class="text-center">@title</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <a asp-action="CreateQuestion" asp-route-levelId="@idLevel" class="btn btn-primary">Create New</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].ContentQuestion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Answer)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContentQuestion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Answer)
+                    </td>
+                    <td>
+                        <a asp-action="EditQuestion" asp-route-QuestionId="@item.QuestionId">Edit</a> |
+                        <a asp-action="DeleteQuestion" asp-route-QuestionId="@item.QuestionId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

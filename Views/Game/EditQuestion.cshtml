@@ -1,0 +1,46 @@
+﻿@model Question
+
+@{
+    ViewData["Title"] = "EditQuestion";
+}
+
+<div class="container">
+    <h2 class="text-center">Edit Question</h2>
+    <form asp-action="EditQuestion" method="post">
+        <input class="form-control" hidden asp-for="levelId" />
+        <input class="form-control" hidden asp-for="QuestionId" />
+        <div class="form-group">
+            <label asp-for="ContentQuestion"></label>
+            <input asp-for="ContentQuestion" class="form-control" />
+            <span asp-validation-for="ContentQuestion" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Option1"></label>
+            <input asp-for="Option1" class="form-control" />
+            <span asp-validation-for="Option1" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Option2"></label>
+            <input asp-for="Option2" class="form-control" />
+            <span asp-validation-for="Option2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Option3"></label>
+            <input asp-for="Option3" class="form-control" />
+            <span asp-validation-for="Option3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Option4"></label>
+            <input asp-for="Option4" class="form-control" />
+            <span asp-validation-for="Option4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Answer"></label>
+            <input asp-for="Answer" class="form-control" />
+            <span asp-validation-for="Answer" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
